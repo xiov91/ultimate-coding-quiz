@@ -1,7 +1,3 @@
-// ask Ben about this function--shows minutes and seconds like I want, but not sure how it works.
-//      -also, click function won't work? Without it, timer starts when page loads, not when the button's clicked
-//      -with it, button does nothing and timer does nothing, but there's no error code!
-
 (function () {
     // Functions
     function buildQuiz() {
@@ -75,6 +71,10 @@
 
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+        var quizScore = `${numCorrect} out of ${myQuestions.length}`;
+        localStorage.setItem('user score', quizScore);
+        window.location.href = 'highscore.html';
+
     }
 
     function showSlide(n) {
@@ -121,93 +121,94 @@
                 if (--timer < 0) {
                     timer = duration;
                 }
-                //if (--timer === 0) {
-                 //   showResults();
-                //}
+                if (userAnswer != currentQuestion.correctAnswer) {
+                    seconds -= 05;
+                }
+                if (--timer === 0) {
+                    showResults();
+                }
             }, 1000);
         }
 
-        //function setFive() {
-            var fiveMinutes = 60 * 5,
-                display = document.querySelector('#time');
-            startTimer(fiveMinutes, display);
-        //};
-    }
-
-
-    // Variables
-    const quizContainer = document.getElementById('quiz');
-    const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
-    const startButton = document.getElementById('start');
-    const myQuestions = [
-        {
-            question: "Question1?",
-            answers: {
-                a: "Answer",
-                b: "Answer",
-                c: "Answer"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "Question2?",
-            answers: {
-                a: "Answer",
-                b: "Answer",
-                c: "Answer"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "Question3?",
-            answers: {
-                a: "Answer",
-                b: "Answer",
-                c: "Answer",
-                d: "Answer"
-            },
-            correctAnswer: "d"
-        },
-        {
-            question: "Question4?",
-            answers: {
-                a: "Answer",
-                b: "Answer",
-                c: "Answer"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "Question5?",
-            answers: {
-                a: "Answer",
-                b: "Answer",
-                c: "Answer"
-            },
-            correctAnswer: "c"
+        var fiveMinutes = 60 * 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
         }
-    ];
 
 
-    // Kick things off
-    buildQuiz();
+        // Variables
+        const quizContainer = document.getElementById('quiz');
+        const resultsContainer = document.getElementById('results');
+        const submitButton = document.getElementById('submit');
+        const startButton = document.getElementById('start');
+        const myQuestions = [
+            {
+                question: "Question1?",
+                answers: {
+                    a: "Answer",
+                    b: "Answer",
+                    c: "Answer"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Question2?",
+                answers: {
+                    a: "Answer",
+                    b: "Answer",
+                    c: "Answer"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Question3?",
+                answers: {
+                    a: "Answer",
+                    b: "Answer",
+                    c: "Answer",
+                    d: "Answer"
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "Question4?",
+                answers: {
+                    a: "Answer",
+                    b: "Answer",
+                    c: "Answer"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Question5?",
+                answers: {
+                    a: "Answer",
+                    b: "Answer",
+                    c: "Answer"
+                },
+                correctAnswer: "c"
+            }
+        ];
 
-    // Pagination
-    const previousButton = document.getElementById("previous");
-    const nextButton = document.getElementById("next");
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
 
-    // Show the first slide
-    showSlide(currentSlide);
+        // Kick things off
+        buildQuiz();
 
-    // Event listeners
-    submitButton.addEventListener('click', showResults);
-    previousButton.addEventListener("click", showPreviousSlide);
-    nextButton.addEventListener("click", showNextSlide);
-    startQuiz();
-})();
+        // Pagination
+        const previousButton = document.getElementById("previous");
+        const nextButton = document.getElementById("next");
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+
+        // Show the first slide
+        showSlide(currentSlide);
+
+        // Event listeners
+        submitButton.addEventListener('click', showResults);
+        previousButton.addEventListener("click", showPreviousSlide);
+        nextButton.addEventListener("click", showNextSlide);
+        startQuiz();
+    }) ();
 
 
 
