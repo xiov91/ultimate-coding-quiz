@@ -143,48 +143,50 @@
         const startButton = document.getElementById('start');
         const myQuestions = [
             {
-                question: "Question1?",
+                question: "Inside which HTML element do we put the JavaScript?",
                 answers: {
-                    a: "Answer",
-                    b: "Answer",
-                    c: "Answer"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Question2?",
-                answers: {
-                    a: "Answer",
-                    b: "Answer",
-                    c: "Answer"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Question3?",
-                answers: {
-                    a: "Answer",
-                    b: "Answer",
-                    c: "Answer",
-                    d: "Answer"
+                    a: "<html>",
+                    b: "<head>",
+                    c: "<div>",
+                    d: "<script>"
                 },
                 correctAnswer: "d"
             },
             {
-                question: "Question4?",
+                question: "Where is the correct place to insert a JavaScript??",
                 answers: {
-                    a: "Answer",
-                    b: "Answer",
-                    c: "Answer"
+                    a: "Both the <head> and the <body> sections are correct",
+                    b: "<head>",
+                    c: "<body>"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+                answers: {
+                    a: "<script href='xxx.js'>",
+                    b: "<script name='xxx.js'>",
+                    c: "<script tag='xxx.js'>",
+                    d: "<script src='xxx.js'>"
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+                answers: {
+                    a: "if (i<>5)",
+                    b: "if i <> 5",
+                    c: "if (i !=5)",
+                    d: "if i !=5 then"
                 },
                 correctAnswer: "c"
             },
             {
-                question: "Question5?",
+                question: "How can you add a comment in a JavaScript?",
                 answers: {
-                    a: "Answer",
-                    b: "Answer",
-                    c: "Answer"
+                    a: "'This is a comment",
+                    b: "<!-- This is a comment-->",
+                    c: "//This is a comment"
                 },
                 correctAnswer: "c"
             }
