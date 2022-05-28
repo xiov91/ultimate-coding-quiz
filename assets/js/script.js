@@ -21,19 +21,19 @@
                     // ...add an HTML radio button
                     answers.push(
                         `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                ${letter} :
-                ${currentQuestion.answers[letter]}
-              </label>`
+                        <input type="radio" name="question${questionNumber}" value="${letter}">
+                        ${letter} :
+                        ${currentQuestion.answers[letter]}
+                        </label>`
                     );
                 }
 
                 // add this question and its answers to the output
                 output.push(
                     `<div class="slide">
-              <div class="question"> ${currentQuestion.question} </div>
-              <div class="answers"> ${answers.join("")} </div>
-            </div>`
+                    <div class="question"> ${currentQuestion.question} </div>
+                    <div class="answers"> ${answers.join("")} </div>
+                    </div>`
                 );
             }
         );
@@ -81,8 +81,8 @@
         slides[currentSlide].classList.remove('active-slide');
         slides[n].classList.add('active-slide');
         currentSlide = n;
+        nextButton.style.display = 'none';
         if (currentSlide === 0) {
-            nextButton.style.display = 'none';
             previousButton.style.display = 'none';
         }
         else {
@@ -121,14 +121,17 @@
                 if (--timer < 0) {
                     timer = duration;
                 }
+                //if (--timer === 0) {
+                 //   showResults();
+                //}
             }, 1000);
         }
 
-        startButton.onclick = function () {
+        //function setFive() {
             var fiveMinutes = 60 * 5,
                 display = document.querySelector('#time');
             startTimer(fiveMinutes, display);
-        };
+        //};
     }
 
 
@@ -138,72 +141,72 @@
     const submitButton = document.getElementById('submit');
     const startButton = document.getElementById('start');
     const myQuestions = [
-    {
-        question: "Question1?",
-        answers: {
-            a: "Answer",
-            b: "Answer",
-            c: "Answer"
+        {
+            question: "Question1?",
+            answers: {
+                a: "Answer",
+                b: "Answer",
+                c: "Answer"
+            },
+            correctAnswer: "c"
         },
-        correctAnswer: "c"
-    },
-    {
-        question: "Question2?",
-        answers: {
-            a: "Answer",
-            b: "Answer",
-            c: "Answer"
+        {
+            question: "Question2?",
+            answers: {
+                a: "Answer",
+                b: "Answer",
+                c: "Answer"
+            },
+            correctAnswer: "c"
         },
-        correctAnswer: "c"
-    },
-    {
-        question: "Question3?",
-        answers: {
-            a: "Answer",
-            b: "Answer",
-            c: "Answer",
-            d: "Answer"
+        {
+            question: "Question3?",
+            answers: {
+                a: "Answer",
+                b: "Answer",
+                c: "Answer",
+                d: "Answer"
+            },
+            correctAnswer: "d"
         },
-        correctAnswer: "d"
-    },
-    {
-        question: "Question4?",
-        answers: {
-            a: "Answer",
-            b: "Answer",
-            c: "Answer"
+        {
+            question: "Question4?",
+            answers: {
+                a: "Answer",
+                b: "Answer",
+                c: "Answer"
+            },
+            correctAnswer: "c"
         },
-        correctAnswer: "c"
-    },
-    {
-        question: "Question5?",
-        answers: {
-            a: "Answer",
-            b: "Answer",
-            c: "Answer"
-        },
-        correctAnswer: "c"
-    }
-];
+        {
+            question: "Question5?",
+            answers: {
+                a: "Answer",
+                b: "Answer",
+                c: "Answer"
+            },
+            correctAnswer: "c"
+        }
+    ];
 
 
-// Kick things off
-buildQuiz();
+    // Kick things off
+    buildQuiz();
 
-// Pagination
-const previousButton = document.getElementById("previous");
-const nextButton = document.getElementById("next");
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+    // Pagination
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
 
-// Show the first slide
-showSlide(currentSlide);
+    // Show the first slide
+    showSlide(currentSlide);
 
-// Event listeners
-submitButton.addEventListener('click', showResults);
-previousButton.addEventListener("click", showPreviousSlide);
-nextButton.addEventListener("click", showNextSlide);
-startButton.addEventListener("click", startQuiz);
+    // Event listeners
+    submitButton.addEventListener('click', showResults);
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+    startQuiz();
 })();
 
 
