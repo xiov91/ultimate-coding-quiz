@@ -145,29 +145,29 @@
             {
                 question: "Inside which HTML element do we put the JavaScript?",
                 answers: {
-                    a: "<html>",
-                    b: "<head>",
-                    c: "<div>",
-                    d: "<script>"
+                    a: "html",
+                    b: "head",
+                    c: "div",
+                    d: "script"
                 },
                 correctAnswer: "d"
             },
             {
                 question: "Where is the correct place to insert a JavaScript??",
                 answers: {
-                    a: "Both the <head> and the <body> sections are correct",
-                    b: "<head>",
-                    c: "<body>"
+                    a: "Both the head and the body sections are correct",
+                    b: "head",
+                    c: "body"
                 },
                 correctAnswer: "a"
             },
             {
                 question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
                 answers: {
-                    a: "<script href='xxx.js'>",
-                    b: "<script name='xxx.js'>",
-                    c: "<script tag='xxx.js'>",
-                    d: "<script src='xxx.js'>"
+                    a: "script href='xxx.js'",
+                    b: "script name='xxx.js'",
+                    c: "script tag='xxx.js'",
+                    d: "script src='xxx.js'"
                 },
                 correctAnswer: "d"
             },
@@ -185,7 +185,7 @@
                 question: "How can you add a comment in a JavaScript?",
                 answers: {
                     a: "'This is a comment",
-                    b: "<!-- This is a comment-->",
+                    b: "!!!This is a comment!!!",
                     c: "//This is a comment"
                 },
                 correctAnswer: "c"
